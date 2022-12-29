@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-Back</title>
+    <style>
+        body {
+            background-color: rgb(81, 100, 100);
+        }
+        #jan-principal {
+            background-color: black;
+            width: 900px;
+            height: 612px;
+            transform: translate(200px, 0px);
+            margin-left: -120px;
+        }
+        #quad1 {
+            width: 300px;
+            height: 200px;
+            transform: translate(0px, 0px);
+            border: solid 3px white;
+        }
+        #quad2 {
+            width: 300px;
+            height: 200px;
+            transform: translate(0px, 0px);
+            border: solid 3px white;
+            border-top: 0px;
+        }
+        #quad3 {
+            width: 300px;
+            height: 200px;
+            transform: translate(0px, 0px);
+            border: solid 3px white;
+            border-top: 0px;
+        }
+        #quad4 {
+            width: 300px;
+            height: 200px;
+            transform: translate(300px, -612px);
+            border: solid 3px white;
+            border-left: 0px;
+        }
+        #quad5 {
+            width: 300px;
+            height: 200px;
+            transform: translate(300px, -612px);
+            border: solid 3px white;
+            border-top: 0px;
+            border-left: 0px;
+        }
+        #quad6 {
+            width: 300px;
+            height: 200px;
+            transform: translate(300px, -612px);
+            border: solid 3px white;
+            border-top: 0px;
+            border-left: 0px;
+        }
+        #quad7 {
+            width: 300px;
+            height: 200px;
+            transform: translate(600px, -1224px);
+            border: solid 3px white;
+            border-left: 0px;
+        }
+        #quad8 {
+            width: 300px;
+            height: 200px;
+            transform: translate(600px, -1224px);
+            border: solid 3px white;
+            border-top: 0px;
+            border-left: 0px;
+        }
+        #quad9 {
+            width: 300px;
+            height: 200px;
+            transform: translate(600px, -1224px);
+            border: solid 3px white;
+            border-top: 0px;
+            border-left: 0px;
+        }
+        #botao{
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+            height: 50px;
+            width: 150px;
+            border: solid 2px black;
+            transform: translate(1100px, -450px);
+            text-align: center;
+            font-size: 21px;
+            font-family: monospace;
+            padding-top: 20px;
+        }
+        #botao:hover {
+            color: aliceblue;
+            background-color: black;
+            border: solid 2px white;
+        }
+        #obj1 {
+            width: 200px;
+            height: 150px;
+            border-radius: 20px;
+            transform: translate(50px, 20px);
+        }
+        #obj2 {
+            width: 200px;
+            height: 150px;
+            border-radius: 20px;
+            transform: translate(50px, 20px);
+        }
+        #obj3 {
+            width: 200px;
+            height: 150px;
+            border-radius: 20px;
+            transform: translate(50px, 20px);
+        }
+        #obj4 {
+            width: 200px;
+            height: 150px;
+            border-radius: 20px;
+            transform: translate(50px, 20px);
+        }
+        #obj5 {
+            width: 200px;
+            height: 150px;
+            border-radius: 20px;
+            transform: translate(50px, 20px);
+        }
+        #obj6 {
+            width: 200px;
+            height: 150px;
+            border-radius: 20px;
+            transform: translate(50px, 20px);
+        }
+        #obj7 {
+            width: 200px;
+            height: 150px;
+            border-radius: 20px;
+            transform: translate(50px, 20px);
+        }
+        #obj8 {
+            width: 200px;
+            height: 150px;
+            border-radius: 20px;
+            transform: translate(50px, 20px);
+        }
+        #obj9 {
+            width: 200px;
+            height: 150px;
+            border-radius: 20px;
+            transform: translate(50px, 20px);
+        }
+        #TextoGanhador {
+            border: solid 3px black;
+            width: 250px;
+            height: 35px;
+            background-color: white;
+            transform: translate(1050px, -350px);
+            text-align: center;
+            font-family: monospace;
+            font-size: 19px;
+            padding-top: 12px;
+        }
+        #fechar {
+            width: 200px;
+            height: 50px;
+            background-color: azure;
+            border: solid 2px black;
+            text-align: center;
+            padding-top: 18px;
+            transform: translate(1080px, -400px);
+            font-family: monospace;
+            font-size: 21px;
+        }
+        #fechar:hover {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border: solid 2px white;
+        }
+        #rounds {
+            width: 200px;
+            height: 50px;
+            background-color: azure;
+            border: solid 2px black;
+            text-align: center;
+            padding-top: 18px;
+            transform: translate(1080px, -750px);
+            font-family: monospace;
+            font-size: 21px;
+        }
+    </style>
+</head>
+<body>
+    <main id="jan-principal">
+        <div id="quad1"><div id="obj1"></div></div>
+        <div id="quad2"><div id="obj2"></div></div>
+        <div id="quad3"><div id="obj3"></div></div>
+        <div id="quad4"><div id="obj4"></div></div>
+        <div id="quad5"><div id="obj5"></div></div>
+        <div id="quad6"><div id="obj6"></div></div>
+        <div id="quad7"><div id="obj7"></div></div>
+        <div id="quad8"><div id="obj8"></div></div>
+        <div id="quad9"><div id="obj9"></div></div>
+    </main>
+    <div onclick="BotaBola()" id="botao">Commencer</div>
+    <div onclick = "Contador()" id="fechar">Fechamento Code</div>
+    <div id="TextoGanhador"></div>
+    <div id="rounds"></div>
+
+
+    <script>       
+        function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        var obj1 = document.getElementById("obj1")
+        var obj2 = document.getElementById("obj2")
+        var obj3 = document.getElementById("obj3")
+        var obj4 = document.getElementById("obj4")
+        var obj5 = document.getElementById("obj5")
+        var obj6 = document.getElementById("obj6")
+        var obj7 = document.getElementById("obj7")
+        var obj8 = document.getElementById("obj8")
+        var obj9 = document.getElementById("obj9")
+
+        var VoF = false
+
+        const casas =[obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9]
+        var i1 = 1
+        var i2 = 1
+        var i3 = 1
+        var i4 = 1
+        var i5 = 1
+        var i6 = 1
+        var i7 = 1
+        var i8 = 1
+        var i9 = 1
+        
+        document.getElementById('rounds').innerText = 'Round 0'
+        
+        function BotaBola() {
+            var RandomSquare1 = Math.floor(Math.random() * 10)
+            var RandomSquare2 = Math.floor(Math.random() * 10)
+            var RandomSquare3 = Math.floor(Math.random() * 10)
+            var RandomSquare4 = Math.floor(Math.random() * 10)
+            var RandomColors1 = Math.floor(Math.random() * 10)
+            var RandomColors2 = Math.floor(Math.random() * 10)
+            var RandomColors3 = Math.floor(Math.random() * 10)
+            var RandomColors4 = Math.floor(Math.random() * 10)
+            var c = Math.floor(Math.random() * 10)
+            var d = Math.floor(Math.random() * 10)
+
+            var cores = [, "blue", "green", "yellow", "red", "purple", "brown", "pink", "white", "orange"]
+            let casas =[ , obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9]
+            /*let contadores = [ , i1, i2, i3, i4, i5, i6, i7, i8, i9]*/
+            let rouders = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            var time = [, 100, 1000, 2000, 2100, 3000, 4000, 4100, 5000, 6000, 6100, 7000, 8000]
+            let a = 0
+
+            const syncWait = ms => {
+            const end = Date.now() + ms
+            while (Date.now() < end) continue
+}
+            
+            for (let i = 0; i < 8; i++) {
+                var RandomColors = Math.floor(Math.random() * 10)
+                var RandomSquares = Math.floor(Math.random() * 10)
+                var colors = cores[RandomColors]
+                var quads = casas[RandomSquares]
+                var valoround = ('Round ' + rouders[i])
+                /*for (let a = 0; a < 2; a++) {
+                    sleep(time[a]).then(() =>document.getElementById('rounds').innerText = valoround)
+                }*/
+
+                sleep(time[1]).then(() =>document.getElementById('rounds').innerText = valoround)
+                sleep(time[1]).then(() => quads.style.backgroundColor = colors);
+                sleep(time[2]).then(() => quads.style.backgroundColor = 'black');
+
+                for (let g = 0; g < 250000000; g++) {
+                    
+                    let k = g ++
+                }             
+            }
+        }
+        
+            
+            /*for (let i = 0; i < 8; i++) {
+	        var colors = cores[RandomColors];
+            var square = casas[RandomSquare]
+            var valoround = ('Round ' + rouders[i])
+            sleep(time[i]).then(() =>document.getElementById('rounds').innerText = valoround)
+            sleep(time[w]).then(() => square.style.backgroundColor = colors);
+            sleep(time[z]).then(() => square.style.backgroundColor = 'black');
+            }*/            
+            
+            /*sleep(500).then(() => document.getElementById('rounds').innerText = 'Round 1')
+            sleep(1000).then(() => casas[RandomSquare1].style.backgroundColor = cores[RandomColors1]);
+            sleep(2000).then(() => casas[RandomSquare1].style.backgroundColor = 'black');
+            sleep(2100).then(() => document.getElementById('rounds').innerText = 'Round 2')
+            sleep(2200).then(() => casas[RandomSquare2].style.backgroundColor = cores[RandomColors2])
+            sleep(3000).then(() => casas[RandomSquare2].style.backgroundColor = 'black');
+            sleep(3100).then(() => document.getElementById('rounds').innerText = 'Round 3')
+            sleep(3200).then(() => casas[RandomSquare3].style.backgroundColor = cores[RandomColors3])
+            sleep(4000).then(() => casas[RandomSquare3].style.backgroundColor = 'black');
+            sleep(4100).then(() => document.getElementById('rounds').innerText = 'Round 4')
+            sleep(4200).then(() => casas[RandomSquare4].style.backgroundColor = cores[RandomColors4])
+            sleep(5000).then(() => casas[RandomSquare4].style.backgroundColor = 'black');
+        */
+        function TrueOrFalse() {
+            VoF = true
+        }
+            function Contador() {
+                TrueOrFalse()
+                if (i1 > 0 && VoF == true) {
+                var text = "Parabéns, você ganhou!"
+                document.getElementById("TextoGanhador").innerText = text
+            }
+        }
+        function timer() {
+            var div = document.createElement("div")
+            div.style.backgroundColor = "red"
+            div.style.height = "300px"
+            div.style.width = "300px"
+        }
+    </script>
+</body>
+</html>
